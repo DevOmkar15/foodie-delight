@@ -1,0 +1,20 @@
+<div class="container" *ngIf="restaurant">
+  <h2>{{ restaurant.name }}</h2>
+  <p><strong>Description:</strong> {{ restaurant.description }}</p>
+  <p><strong>Location:</strong> {{ restaurant.location }}</p>
+  <img
+    *ngIf="restaurant.imageUrl"
+    [src]="restaurant.imageUrl"
+    alt="{{ restaurant.name }}"
+  />
+  <button
+    mat-raised-button
+    color="primary"
+    [routerLink]="['/restaurants/edit', restaurant.id]"
+  >
+    Edit
+  </button>
+  <button mat-raised-button color="accent" [routerLink]="['/restaurants']">
+    Back to List
+  </button>
+</div>
